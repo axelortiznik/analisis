@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Moto 3D con MindAR</title>
 
     <!-- A-Frame -->
@@ -19,11 +19,13 @@
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: true"
-      embedded
     >
       <!-- Carga de modelos -->
       <a-assets>
-        <a-asset-item id="moto3D" src="./rueda.glb"></a-asset-item>
+        <a-asset-item 
+          id="rueda3D" 
+          src="./rueda.glb"
+        ></a-asset-item>
       </a-assets>
 
       <!-- Cámara -->
@@ -32,13 +34,15 @@
       <!-- Cuando detecta la imagen -->
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model
-          src="#moto3D"
-          position="0 -0.1 0"
+          src="#rueda3D"
+          position="0 0 0"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 6000"
-        ></a-gltf-model>
+          scale="0.5 0.5 0.5"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 3000"
+        >
+        </a-gltf-model>
       </a-entity>
     </a-scene>
   </body>
 </html>
+
